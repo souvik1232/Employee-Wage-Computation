@@ -18,16 +18,21 @@ public class EmployeeWage {
 		int PartTimeHour=4;
 		int DailyWage=0;
 		int EmployeeType=random.nextInt(2);
-		if(EmployeeType == 0)
+		switch(EmployeeType)
 		{
+		case 0:
 			DailyWage=(WagePerHour*FullDayHour);
 			System.out.println("Employee wage is: "+DailyWage);
-		}
-		else
-		{
+			break;
+		case 1:
 			DailyWage=(WagePerHour*PartTimeHour);
 			System.out.println("Employee wage is: "+DailyWage);
+			break;
+		default:
+			System.out.println("Invalid");
+				
 		}
+		
 	}
 
 }
