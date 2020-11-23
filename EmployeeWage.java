@@ -10,14 +10,18 @@ public class EmployeeWage {
 		Random random=new Random();
 		int attendance=random.nextInt(2);
 		if(attendance == 0)
-		{
 			System.out.println("Employee is absent!");
-		}
 		else
-		{
 			System.out.println("Employee is present!");
+		int WagePerHour=20;
+		int FullDayHour=8;
+		int DailyWage=0;
+		int EmployeeType=random.nextInt(2);
+		if(EmployeeType == 0)
+		{
+			DailyWage=(WagePerHour*FullDayHour);
+			System.out.println("Daily Employee wage is: "+DailyWage);
 		}
-		
 	}
 
 }
