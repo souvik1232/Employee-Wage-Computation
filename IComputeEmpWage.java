@@ -7,3 +7,4 @@ public interface IComputeEmpWage {
 	public int computeEmpWage(CompanyEmpWage companyEmpWage);
 	  
 }
+ 

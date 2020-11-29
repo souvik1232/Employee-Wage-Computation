@@ -1,6 +1,8 @@
 package com.java.Employee;
 
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Random;
 
 public class EmployeeWage {
@@ -12,13 +14,14 @@ public class EmployeeWage {
 	public int numOfCompany=0;
 	
 	private LinkedList<CompanyEmpWage> companyEmpWageList;
+	private Map<String, CompanyEmpWage>companyEmpWageMap;
 	
-	//CompanyEmpWage companyEmpWage[];
+	
 	
 	public EmployeeWage()
 	{
 		companyEmpWageList= new LinkedList<CompanyEmpWage>();
-		//companyEmpWage=new CompanyEmpWage[5];
+		companyEmpWageMap=new HashMap<String, CompanyEmpWage>();
 	}
 	
 	private void addCompanyEmpWage(String company,int empRatePerHour,int numOfWorkingDays,int maxHoursPerMonth)
@@ -26,8 +29,7 @@ public class EmployeeWage {
 		CompanyEmpWage companyEmpWage=new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);	
 		
 		companyEmpWageList.add(companyEmpWage);
-//		companyEmpWage[numOfCompany]=new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
-//		numOfCompany++;
+		companyEmpWageMap.put(company, companyEmpWage);
 	}
 	
 	private void computeEmpWage()
@@ -38,8 +40,7 @@ public class EmployeeWage {
 			company.setTotalEmpWage(this.computeEmpWage(company));
 			System.out.println(company);
 			
-//			companyEmpWage[i].setTotalEmpWage(this.computeEmpWage(companyEmpWage[i]));
-//			System.out.println(companyEmpWage[i]);
+
 		}
 	}
 	
