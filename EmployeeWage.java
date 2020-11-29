@@ -42,7 +42,6 @@ public class EmployeeWage {
 		totalWorkingDays++;
 		
 		int empCheck=random.nextInt(3);
-				//(int) Math.floor(Math.random() * 10)%3;
 		switch(empCheck)
 		{
 		case IS_PART_TIME:
@@ -69,4 +68,5 @@ public class EmployeeWage {
 		empWage.addCompanyEmpWage("Reliance", 10, 4, 20);
 		empWage.computeEmpWage();
 	}
+	
 }
