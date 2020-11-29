@@ -80,5 +80,8 @@ public class EmployeeWage {
 		empWage.addCompanyEmpWage("Reliance", 10, 4, 20);
 		empWage.computeEmpWage();
 	}
+	public int getTotalWage(String company) {
+		return companyEmpWageMap.get(company).totalEmpWage;
+	}
 	
 }
