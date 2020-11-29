@@ -1,5 +1,6 @@
 package com.java.Employee;
 
+import java.util.LinkedList;
 import java.util.Random;
 
 public class EmployeeWage {
@@ -10,25 +11,35 @@ public class EmployeeWage {
 	
 	public int numOfCompany=0;
 	
-	CompanyEmpWage companyEmpWage[];
+	private LinkedList<CompanyEmpWage> companyEmpWageList;
+	
+	//CompanyEmpWage companyEmpWage[];
 	
 	public EmployeeWage()
 	{
-		companyEmpWage=new CompanyEmpWage[5];
+		companyEmpWageList= new LinkedList<CompanyEmpWage>();
+		//companyEmpWage=new CompanyEmpWage[5];
 	}
 	
 	private void addCompanyEmpWage(String company,int empRatePerHour,int numOfWorkingDays,int maxHoursPerMonth)
 	{
-		companyEmpWage[numOfCompany]=new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
-		numOfCompany++;
+		CompanyEmpWage companyEmpWage=new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);	
+		
+		companyEmpWageList.add(companyEmpWage);
+//		companyEmpWage[numOfCompany]=new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+//		numOfCompany++;
 	}
 	
 	private void computeEmpWage()
 	{
-		for (int i = 0; i <numOfCompany; i++) 
+		for (int i = 0; i <companyEmpWageList.size(); i++) 
 		{
-			companyEmpWage[i].setTotalEmpWage(this.computeEmpWage(companyEmpWage[i]));
-			System.out.println(companyEmpWage[i]);
+			CompanyEmpWage company=companyEmpWageList.get(i);
+			company.setTotalEmpWage(this.computeEmpWage(company));
+			System.out.println(company);
+			
+//			companyEmpWage[i].setTotalEmpWage(this.computeEmpWage(companyEmpWage[i]));
+//			System.out.println(companyEmpWage[i]);
 		}
 	}
 	
